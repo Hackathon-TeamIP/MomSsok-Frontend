@@ -24,4 +24,6 @@ export const CalendarIcon = React.forwardRef<SVGSVGElement, IconProps>(
   },
 );
 
+CalendarIcon.displayName = "CalendarIcon";
+
 export default CalendarIcon;

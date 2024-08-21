@@ -24,4 +24,6 @@ export const FireIcon = React.forwardRef<SVGSVGElement, IconProps>(
   },
 );
 
+FireIcon.displayName = "FireIcon";
+
 export default FireIcon;

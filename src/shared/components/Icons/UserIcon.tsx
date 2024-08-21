@@ -26,4 +26,6 @@ export const UserIcon = React.forwardRef<SVGSVGElement, IconProps>(
   },
 );
 
+UserIcon.displayName = "UserIcon";
+
 export default UserIcon;

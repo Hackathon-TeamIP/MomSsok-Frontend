@@ -24,4 +24,6 @@ export const ChevronDownIcon = React.forwardRef<SVGSVGElement, IconProps>(
   },
 );
 
+ChevronDownIcon.displayName = "ChevronDownIcon";
+
 export default ChevronDownIcon;

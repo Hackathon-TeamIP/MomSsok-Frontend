@@ -31,7 +31,6 @@ const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
     ghost: "bg-transparent text-gray-700 hover:bg-gray-100",
   };
 
-
   const spinnerColor = variant === "solid" ? "#fff" : "#000";
 
   const combinedClassName = cn(
@@ -51,10 +50,8 @@ const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
       ref={ref}
       {...rest}
     >
-      {isLoading && (
-        <SpinnerIcon color={spinnerColor} />
-      )}
-      {isLoading ? 'Loading..' : children}
+      {isLoading && <SpinnerIcon color={spinnerColor} />}
+      {isLoading ? "Loading.." : children}
     </button>
   );
 };

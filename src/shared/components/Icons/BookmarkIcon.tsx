@@ -22,4 +22,6 @@ export const BookmarkIcon = React.forwardRef<SVGSVGElement, IconProps>(
   },
 );
 
+BookmarkIcon.displayName = "BookmarkIcon";
+
 export default BookmarkIcon;
