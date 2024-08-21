@@ -5,3 +5,6 @@ export { default as FireIcon } from "./FireIcon";
 export { default as CalendarIcon } from "./CalendarIcon";
 export { default as UserIcon } from "./UserIcon";
 export { default as ChevronDownIcon } from "./ChevronDownIcon";
+export { default as SearchIcon } from "./SearchIcon";
+export { default as AlarmIcon } from "./AlarmIcon";
+export { default as MenuIcon } from "./MenuIcon";
