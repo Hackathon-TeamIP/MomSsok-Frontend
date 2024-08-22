@@ -6,6 +6,6 @@ export interface DrawerProps {
 export interface DrawerFilterListProps<T> {
   title: string;
   options: [T, string][];
-  selectedOption: T;
+  selectedOption: string;
   onOptionClick: (option: T) => void;
 }

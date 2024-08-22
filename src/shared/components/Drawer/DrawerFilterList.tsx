@@ -16,7 +16,7 @@ export const DrawerFilterList = <T extends React.ReactNode>({
           <li
             key={key as React.Key}
             className={`p-2 cursor-pointer text-center py-4 text-[17px] ${
-              selectedOption === key ? "text-primary" : "text-[#2c2c2c]"
+              selectedOption === label ? "text-primary" : "text-[#2c2c2c]"
             }`}
             onClick={() => onOptionClick(key)}
           >

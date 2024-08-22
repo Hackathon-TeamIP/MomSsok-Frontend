@@ -7,9 +7,9 @@ import { AnimatePresence } from "framer-motion";
 import { Drawer, DrawerFilterList } from "@/shared/components/Drawer";
 import ArrowRightIcon from "@/shared/components/Icons/ArrowRightIcon";
 
-export type MainOrder = "nearest" | "popular" | "rating";
+export type OptionKey = "nearest" | "popular" | "rating";
 
-const SORT_ORDER_TYPO: Record<MainOrder, string> = {
+const OPTIONS: Record<OptionKey, string> = {
   nearest: "가까운 순",
   popular: "인기 순",
   rating: "별점 순",
@@ -18,10 +18,10 @@ const SORT_ORDER_TYPO: Record<MainOrder, string> = {
 // TODO 데이터 가져오기, 리팩토링
 export const SpacesList = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedSort, setSelectedSort] = useState<MainOrder>("nearest");
+  const [selectedOption, setSelectedOption] = useState<string>(OPTIONS.nearest);
 
-  const handleOptionClick = (option: MainOrder) => {
-    setSelectedSort(option);
+  const handleOptionClick = (selectedKey: OptionKey) => {
+    setSelectedOption(OPTIONS[selectedKey]);
     setIsOpen(false);
   };
 
@@ -36,7 +36,7 @@ export const SpacesList = () => {
           className="flex items-center gap-[7px] cursor-pointer"
         >
           <p className="text-[#8E8E93] text-[15px] font-medium">
-            {selectedSort}
+            {selectedOption}
           </p>
           <ArrowRightIcon className="text-primary" />
         </div>
@@ -50,10 +50,10 @@ export const SpacesList = () => {
       <AnimatePresence>
         {isOpen && (
           <Drawer setDrawerOpen={setIsOpen}>
-            <DrawerFilterList<MainOrder>
+            <DrawerFilterList<OptionKey>
               title="정렬"
-              options={Object.entries(SORT_ORDER_TYPO) as [MainOrder, string][]}
-              selectedOption={selectedSort}
+              options={Object.entries(OPTIONS) as [OptionKey, string][]}
+              selectedOption={selectedOption}
               onOptionClick={handleOptionClick}
             />
           </Drawer>
