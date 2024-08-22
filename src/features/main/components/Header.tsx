@@ -25,10 +25,10 @@ export default function Header() {
       </div>
 
       <div
-        className="w-full h-[36px] flex items-center px-2 bg-white rounded-[10px] my-4 justify-between cursor-pointer"
+        className="w-full h-[36px] flex items-center px-3 bg-white rounded-[10px] my-4 justify-between cursor-pointer"
         onClick={() => router.push("/search")}
       >
-        <p className="text-[#888]">내 주변 베리어프리 놀이터</p>
+        <p className="text-[#8A8A8E]">내 주변 베리어프리 놀이터</p>
         <SearchIcon color="#888" />
       </div>
     </header>

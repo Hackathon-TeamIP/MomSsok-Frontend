@@ -19,9 +19,9 @@ export const SpacesListItem = ({ space }: Props) => {
           loading="lazy"
         />
         <div className="flex justify-between items-center mt-[6px]">
-          <h3 className="text-sm font-semibold">{name}</h3>
+          <h3 className="text-sm font-semibold line-clamp-1">{name}</h3>
         </div>
-        <p className="text-gray-400 text-xs">{description}</p>
+        <p className="text-[#8A8A8E] text-xs line-clamp-2">{description}</p>
         <div className="flex items-center mt-[5px]">
           <span className="text-[#ff9727] text-xs text-opacity-50">★</span>
           <span className="ml-1 text-xs font-semibold">{rating}</span>
