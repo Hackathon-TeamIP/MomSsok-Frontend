@@ -34,10 +34,13 @@ export const ReservationForm = ({ closeDrawer }: Props) => {
     : undefined;
 
   return (
-    <div className="">
+    <div className="min-h-[70vh]">
       <div className="flex justify-between items-center ml-2 mt-3">
         <h2 className="text-[22px] font-medium text-[#424242]">예약하기</h2>
-        <CloseIcon onClick={closeDrawer} className="text-gray-400" />
+        <CloseIcon
+          onClick={closeDrawer}
+          className="text-gray-400 cursor-pointer"
+        />
       </div>
       <Days selectedDate={selectedDate} onDateChange={handleDateChange} />
       <Divider className="mb-[12px]" />

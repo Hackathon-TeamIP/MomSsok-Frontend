@@ -22,6 +22,12 @@ const data: SpaceSchedule = {
           availableCount: 12,
           status: "모집중",
         },
+        {
+          slotId: 4,
+          timeRange: "15:00 - 17:00",
+          availableCount: 10,
+          status: "모집중",
+        },
       ],
     },
     {

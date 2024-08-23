@@ -41,7 +41,7 @@ export const SpacesList = () => {
           <ArrowRightIcon className="text-primary" />
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-[23px] ">
+      <div className="grid grid-cols-2 gap-x-3 gap-y-[23px]">
         {data.map((space) => (
           <SpacesListItem key={space.id} space={space} />
         ))}

@@ -8,16 +8,30 @@
 
 html,
 body {
-  height: 100%;
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
-    Roboto, "Helvetica Neue", "Noto Sans KR", "Segoe UI", "Apple SD Gothic Neo",
-    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  font-family:
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans KR",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
     sans-serif;
-  background-color: #fff;
+  background-color: #f0f0f0;
   color: #424242;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+:root {
+  --max-width: 500px;
 }

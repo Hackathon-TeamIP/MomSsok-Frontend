@@ -20,7 +20,7 @@ export const FooterButton = ({
 
   return (
     <>
-      <div className="flex items-center gap-3 fixed bottom-0 z-[10] bg-white w-full px-4 py-4">
+      <div className="flex items-center gap-3 fixed bottom-0 z-[10] bg-white w-full px-4 py-4 max-w-custom">
         <Button
           onClick={toggle}
           size="sm"

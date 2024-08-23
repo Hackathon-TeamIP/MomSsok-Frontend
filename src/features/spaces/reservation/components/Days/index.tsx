@@ -13,6 +13,7 @@ export const Days = ({ selectedDate, onDateChange }: DaysProps) => {
     const date = startDate.add(index, "day").format("YYYY-MM-DD");
     onDateChange(date);
   };
+
   return (
     <>
       <h1 className="text-[20px] font-semibold mb-2 text-center text-[#424242]">
@@ -22,7 +23,7 @@ export const Days = ({ selectedDate, onDateChange }: DaysProps) => {
         {daysOfWeek.map((day, index) => (
           <div
             key={index}
-            className="text-center shrink-0 basis-1/7 min-w-[44px]"
+            className="text-center shrink-0 basis-1/7 min-w-[44px] cursor-pointer"
             onClick={() => handleDateClick(index)}
           >
             <p

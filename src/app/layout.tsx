@@ -1,4 +1,5 @@
 import "@/shared/styles";
+import { NextLayout } from "@/shared/components/Layout/Layout";
 import { pretendard } from "@/shared/styles/fonts";
 import type { Metadata } from "next";
 
@@ -14,9 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${pretendard.variable}`}>
-      <body>
-        {/* <NextLayout>{children}</NextLayout> */}
-        {children}
+      <body className="max-w-custom mx-auto min-h-screen flex flex-col shadow-lg overflow-y-auto h-auto scrollbar-hide">
+        <NextLayout>{children}</NextLayout>
       </body>
     </html>
   );

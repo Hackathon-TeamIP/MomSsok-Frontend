@@ -28,7 +28,7 @@ const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
       "text-white font-semibold bg-[#6290C7] hover:bg-[#2256A7] disabled:bg-[#82A0C5]",
     outline:
       "bg-transparent border border-gray-200 text-black hover:bg-gray-100",
-    ghost: "bg-transparent text-gray-700 hover:bg-gray-100",
+    ghost: "bg-transparent text-gray-700",
   };
 
   const spinnerColor = variant === "solid" ? "#fff" : "#000";

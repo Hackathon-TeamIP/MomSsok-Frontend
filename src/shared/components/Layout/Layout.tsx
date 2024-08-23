@@ -1,10 +1,3 @@
-import { TabBar } from "../Navigation/TabBar";
-
 export const NextLayout = ({ children }: { children?: React.ReactNode }) => {
-  return (
-    <div className="pb-[83px]">
-      {children}
-      <TabBar />
-    </div>
-  );
+  return <div className="bg-white min-h-screen">{children}</div>;
 };

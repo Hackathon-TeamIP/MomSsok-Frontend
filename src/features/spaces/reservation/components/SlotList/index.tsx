@@ -17,14 +17,14 @@ export const SlotList = ({
   };
 
   return (
-    <div className="flex space-x-3 mb-4">
+    <div className="flex space-x-3 mb-4 overflow-x-scroll scrollbar-hide">
       {slots.map((slot) => (
         <div
           key={slot.slotId}
-          className={`px-[15px] py-[20px] border border-solid border-gray-100 rounded-lg shadow-md w-[120px] h-[120px] ${
+          className={`px-[15px] py-[20px] border border-solid border-gray-200 rounded-lg shadow-md w-[120px] h-[120px] shrink-0 ${
             selectedSlotId === slot.slotId
-              ? "border-[#FF9727]"
-              : "border-gray-300"
+              ? "border-[#ff9727] bg-[#FFFAF0]"
+              : ""
           } ${slot.availableCount === 0 ? "bg-gray-100" : "cursor-pointer"}`}
           onClick={() =>
             slot.availableCount > 0 && handleSlotClick(slot.slotId)

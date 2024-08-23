@@ -12,7 +12,7 @@ export const Drawer = ({ setDrawerOpen, children, className }: DrawerProps) => {
         exit={{ opacity: 0 }}
       />
       <motion.div
-        className={`fixed bottom-0 inset-x-0 mx-auto w-full min-h-10 bg-white rounded-t-2xl p-4 overflow-hidden ${className} z-[100]`}
+        className={`fixed max-w-custom bottom-0 inset-x-0 mx-auto w-full min-h-10 bg-white rounded-t-2xl p-4 overflow-hidden ${className} z-[100]`}
         initial={{ y: 336 }}
         animate={{ y: 0 }}
         exit={{ y: 336 }}
