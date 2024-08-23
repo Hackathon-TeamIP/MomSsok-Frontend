@@ -21,7 +21,6 @@ export const SpaceInfo = () => {
             <ArrowRightIcon color="#9c9ca0" />
           </div>
         </div>
-
         <div className="py-[15px] px-[13px] bg-[#F5F5F5] rounded-[10px] flex flex-col gap-2">
           {info.map((item) => (
             <div key={item.id} className="flex gap-2">
@@ -32,7 +31,6 @@ export const SpaceInfo = () => {
             </div>
           ))}
         </div>
-
         <h5 className="font-semibold text-[#424242] text-[15px] py-3 mt-[11px]">
           접근성 정보
         </h5>
@@ -48,7 +46,6 @@ export const SpaceInfo = () => {
           ))}
         </div>
         <Divider className="mt-6" />
-
         <div className="flex justify-between py-3 mt-[2px]">
           <h5 className="font-semibold text-[#424242] text-[15px]">
             가는 방법

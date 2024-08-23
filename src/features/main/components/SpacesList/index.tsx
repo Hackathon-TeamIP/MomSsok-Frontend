@@ -49,7 +49,7 @@ export const SpacesList = () => {
 
       <AnimatePresence>
         {isOpen && (
-          <Drawer setDrawerOpen={setIsOpen}>
+          <Drawer setDrawerOpen={setIsOpen} className="pb-[83px]">
             <DrawerFilterList<OptionKey>
               title="정렬"
               options={Object.entries(OPTIONS) as [OptionKey, string][]}
