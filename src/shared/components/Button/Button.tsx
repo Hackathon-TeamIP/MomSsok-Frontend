@@ -15,7 +15,7 @@ const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
   } = props;
 
   const baseStyles =
-    "flex items-center justify-center font-medium rounded-lg transition duration-150 ease-in-out";
+    "flex items-center justify-center font-medium rounded-lg transition duration-150 ease-in-out text-nowrap";
 
   const sizeStyles = {
     sm: "px-3 py-2 text-sm",
