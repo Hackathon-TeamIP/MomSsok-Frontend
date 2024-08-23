@@ -1,4 +1,4 @@
-import { TabBar } from "../Navigation/Tabbar";
+import { TabBar } from "../Navigation/TabBar";
 
 export const NextLayout = ({ children }: { children?: React.ReactNode }) => {
   return (
