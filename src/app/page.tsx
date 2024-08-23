@@ -1,6 +1,6 @@
 import Header from "@/features/main/components/Header";
 import { SpacesList } from "@/features/main/components/SpacesList";
-import TabBar from "@/shared/components/Navigation/TabBar";
+import { TabBar } from "@/shared/components/Navigation/Tabbar";
 import { Suspense } from "react";
 
 export default function Home() {
