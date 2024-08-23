@@ -7,6 +7,7 @@ import {
   MenuIcon,
 } from "@/shared/components/Icons";
 import { useRouter } from "next/navigation";
+import CurrentLocationButton from "./CurrentLocationButton";
 
 export default function Header() {
   const router = useRouter();
@@ -24,12 +25,15 @@ export default function Header() {
         </div>
       </div>
 
-      <div
-        className="w-full h-[36px] flex items-center px-3 bg-white rounded-[10px] my-4 justify-between cursor-pointer"
-        onClick={() => router.push("/search")}
-      >
-        <p className="text-[#8A8A8E]">내 주변 베리어프리 놀이터</p>
-        <SearchIcon color="#888" />
+      <div className="flex justify-between items-center gap-2">
+        <div
+          className="w-full h-[36px] flex items-center px-3 bg-white rounded-[10px] my-4 justify-between cursor-pointer"
+          onClick={() => router.push("/search")}
+        >
+          <p className="text-[#8A8A8E]">내 주변 베리어프리 놀이터</p>
+          <SearchIcon color="#888" />
+        </div>
+        <CurrentLocationButton />
       </div>
     </header>
   );
