@@ -10,7 +10,7 @@ export const SpacesListItem = ({ space }: Props) => {
   const { id, name, description, rating, imageUrl, isLiked, reviewCount } =
     space;
   return (
-    <Link href={`/space/${id}`}>
+    <Link href={`/spaces/detail/${id}`}>
       <div className=" overflow-hidden w-full flex flex-col">
         <img
           src={imageUrl}
