@@ -19,7 +19,7 @@ export const FooterButton = ({
         onClick={toggle}
         size="sm"
         variant="ghost"
-        className="w-[60px] max-h-[48px] p-1"
+        className="w-[60px] max-h-[48px] p-1 flex-col"
       >
         {isSelected ? (
           <BookmarkIcon className="text-primary mx-auto" />
