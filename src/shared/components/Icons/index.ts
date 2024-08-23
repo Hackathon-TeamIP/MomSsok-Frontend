@@ -8,3 +8,5 @@ export { default as ChevronDownIcon } from "./ChevronDownIcon";
 export { default as SearchIcon } from "./SearchIcon";
 export { default as AlarmIcon } from "./AlarmIcon";
 export { default as MenuIcon } from "./MenuIcon";
+export { default as HeartIcon } from "./HeartIcon";
+export { default as GeoIcon } from "./GeoIcon";
