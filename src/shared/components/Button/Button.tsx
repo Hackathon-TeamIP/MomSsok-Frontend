@@ -11,6 +11,7 @@ const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
     variant = "solid",
     className,
     children,
+    type = "button",
     ...rest
   } = props;
 
@@ -45,6 +46,7 @@ const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
 
   return (
     <button
+      type={type}
       className={combinedClassName}
       disabled={isDisabled || isLoading}
       ref={ref}
