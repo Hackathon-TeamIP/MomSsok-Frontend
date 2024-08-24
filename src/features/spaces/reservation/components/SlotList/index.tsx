@@ -1,3 +1,4 @@
+import { cn } from "@/shared/lib/utils";
 import { TimeSlot } from "@/shared/types/reservation";
 import React from "react";
 
@@ -21,11 +22,14 @@ export const SlotList = ({
       {slots.map((slot) => (
         <div
           key={slot.slotId}
-          className={`px-[15px] py-[20px] border border-solid border-gray-200 rounded-lg shadow-md w-[120px] h-[120px] shrink-0 ${
-            selectedSlotId === slot.slotId
-              ? "border-[#ff9727] bg-[#FFFAF0]"
-              : ""
-          } ${slot.availableCount === 0 ? "bg-gray-100" : "cursor-pointer"}`}
+          className={cn(
+            "px-[15px] py-[20px] border border-solid border-gray-200 rounded-lg shadow-md w-[120px] h-[120px] shrink-0",
+            {
+              "border-[#ff9727] bg-[#FFFAF0]": selectedSlotId === slot.slotId,
+              "bg-gray-100 cursor-not-allowed": slot.availableCount === 0,
+              "cursor-pointer": slot.availableCount > 0,
+            },
+          )}
           onClick={() =>
             slot.availableCount > 0 && handleSlotClick(slot.slotId)
           }
