@@ -3,7 +3,7 @@ import { Button } from "@/shared/components/Button";
 import { Divider } from "@/shared/components/Divider";
 import { CloseIcon } from "@/shared/components/Icons";
 import { getToday } from "@/shared/lib/formatTime";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import data from "../../api/data";
 import { Days } from "../Days";
 import { GuestInput } from "../GuestInput";
@@ -23,7 +23,9 @@ export const ReservationForm = ({ closeDrawer }: Props) => {
     ? data.days.find((day) => day.date === selectedDate)
     : undefined;
 
-  const slots = selectedSchedule ? selectedSchedule.slots : [];
+  const slots = useMemo(() => {
+    return selectedSchedule ? selectedSchedule.slots : [];
+  }, [selectedSchedule]);
 
   // 첫 번째 슬롯의 ID를 기본값으로 설정
   const [selectedSlotId, setSelectedSlotId] = useState<number | null>(
@@ -33,13 +35,16 @@ export const ReservationForm = ({ closeDrawer }: Props) => {
   const [childCount, setChildCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(false);
 
+  // 매진 제외, 첫 번째 슬롯 선택
   useEffect(() => {
-    if (slots.length > 0) {
+    const availableSlots = slots.filter((slot) => slot.availableCount > 0);
+
+    if (availableSlots.length > 0) {
       if (
         !selectedSlotId ||
-        !slots.some((slot) => slot.slotId === selectedSlotId)
+        !availableSlots.some((slot) => slot.slotId === selectedSlotId)
       ) {
-        setSelectedSlotId(slots[0].slotId);
+        setSelectedSlotId(availableSlots[0].slotId);
       }
     } else {
       setSelectedSlotId(null);
