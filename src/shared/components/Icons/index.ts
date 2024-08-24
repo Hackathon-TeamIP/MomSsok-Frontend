@@ -11,3 +11,5 @@ export { default as MenuIcon } from "./MenuIcon";
 export { default as HeartIcon } from "./HeartIcon";
 export { default as GeoIcon } from "./GeoIcon";
 export { default as CloseIcon } from "./CloseIcon";
+export { default as CircleMinusIcon } from "./CircleMinusIcon";
+export { default as CirclePlusIcon } from "./CirclePlusIcon";

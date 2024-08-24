@@ -1,5 +1,5 @@
 import { cn } from "@/shared/lib/utils";
-import { TimeSlot } from "@/shared/types/reservation";
+import type { TimeSlot } from "@/shared/types/reservation";
 import React from "react";
 
 interface SlotListProps {

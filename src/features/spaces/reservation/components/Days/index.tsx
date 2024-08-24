@@ -2,6 +2,7 @@
 
 import { dates, daysOfWeek, startDate } from "@/shared/lib/formatTime";
 import { cn } from "@/shared/lib/utils";
+import dayjs from "dayjs";
 
 interface DaysProps {
   selectedDate: string | null;
@@ -14,10 +15,15 @@ export const Days = ({ selectedDate, onDateChange }: DaysProps) => {
     onDateChange(date);
   };
 
+  // 선택된 날짜에 따른 월 계산
+  const displayDate = selectedDate
+    ? dayjs(selectedDate).tz("Asia/Seoul")
+    : startDate;
+
   return (
     <>
       <h1 className="text-[20px] font-semibold mb-2 text-center text-[#424242]">
-        {startDate.format("M월")}
+        {displayDate.format("M월")}
       </h1>
       <div className="flex items-center overflow-hidden overflow-x-scroll scrollbar-hide h-[88px]">
         {daysOfWeek.map((day, index) => (
