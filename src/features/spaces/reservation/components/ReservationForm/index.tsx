@@ -94,8 +94,8 @@ export const ReservationForm = ({ closeDrawer }: Props) => {
   };
 
   return (
-    <form className="min-h-[620px]" onSubmit={handleSubmit}>
-      <div className="flex justify-between items-center ml-2 mt-3">
+    <form className="max-h-[95vh]" onSubmit={handleSubmit}>
+      <div className="flex justify-between items-center">
         <h2 className="text-[22px] font-medium text-[#424242]">예약하기</h2>
         <CloseIcon
           onClick={closeDrawer}
@@ -106,24 +106,28 @@ export const ReservationForm = ({ closeDrawer }: Props) => {
       <Divider className="mb-[12px]" />
       {selectedSchedule ? (
         <>
-          <SlotList
-            slots={selectedSchedule.slots}
-            selectedSlotId={selectedSlotId}
-            onSlotChange={handleSlotChange}
-          />
-          <h2 className="text-[22px] font-medium text-[#424242] my-4">인원</h2>
-          <GuestInput
-            label="어른"
-            subLabel="만 19세 이상"
-            value={adultCount}
-            onChange={setAdultCount}
-          />
-          <GuestInput
-            label="아동"
-            subLabel="만 -세 이상~ -세 이하"
-            value={childCount}
-            onChange={setChildCount}
-          />
+          <div className="overflow-y-auto max-h-[40vh]">
+            <SlotList
+              slots={selectedSchedule.slots}
+              selectedSlotId={selectedSlotId}
+              onSlotChange={handleSlotChange}
+            />
+            <h2 className="text-[22px] font-medium text-[#424242] my-4">
+              인원
+            </h2>
+            <GuestInput
+              label="어른"
+              subLabel="만 19세 이상"
+              value={adultCount}
+              onChange={setAdultCount}
+            />
+            <GuestInput
+              label="아동"
+              subLabel="만 -세 이상~ -세 이하"
+              value={childCount}
+              onChange={setChildCount}
+            />
+          </div>
           <div className="mt-8 mb-3 flex gap-[10px]">
             <Button
               className="min-w-[90px] bg-[#C7C7C7] text-white"
@@ -134,7 +138,7 @@ export const ReservationForm = ({ closeDrawer }: Props) => {
               초기화
             </Button>
             <Button
-              className="w-full max-h-[48px]"
+              className="w-full max-h-[48px] px-0"
               type="submit"
               isLoading={isLoading}
               isDisabled={!adultCount || !childCount}

@@ -33,10 +33,6 @@ export const SpaceProfile = () => {
               {description}
             </p>
           </div>
-          <div className="flex flex-col items-center cursor-pointer">
-            <HeartIcon color={isLiked ? "#FF9500" : "#8A8A8E"} />
-            <p className="text-[#8A8A8E] text-sm">{likeCount}</p>
-          </div>
         </div>
         <div className="flex items-center gap-2 mt-[10px] cursor-pointer">
           <StarRating rating={rating} />
