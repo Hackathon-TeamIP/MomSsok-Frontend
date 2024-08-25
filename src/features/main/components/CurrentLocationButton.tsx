@@ -11,7 +11,7 @@ export default function CurrentLocationButton() {
 
     const options = {
       enableHighAccuracy: false, // 위치 정확도
-      timeout: 3000, // 타임아웃 설정
+      timeout: 5000, // 타임아웃 설정
       maximumAge: Infinity, // 캐싱 처리
     };
 

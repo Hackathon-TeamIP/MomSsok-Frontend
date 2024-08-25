@@ -10,10 +10,13 @@ export const SpacesListItem = ({ space }: Props) => {
   const { id, name, description, rating, imageUrl, isLiked, reviewCount } =
     space;
   return (
-    <Link href={`/spaces/detail/${id}`}>
+    <Link href={`/spaces/detail/${id}`} scroll={false}>
       <div className=" overflow-hidden w-full flex flex-col">
         <img
-          src={imageUrl}
+          src={
+            "https://images.unsplash.com/photo-1723914677058-660c90cb772a?w=400"
+          }
+          // src={imageUrl}
           alt={name}
           className="w-full object-cover bg-gray-100 min-w-[165px] aspect-square rounded-[10px]"
           loading="lazy"
