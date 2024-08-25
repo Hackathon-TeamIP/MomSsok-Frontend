@@ -1,7 +1,7 @@
 import { Divider } from "@/shared/components/Divider";
 import { CloseIcon } from "@/shared/components/Icons";
 import ArrowRightIcon from "@/shared/components/Icons/ArrowRightIcon";
-import recommended_spaces from "../api/data";
+import { recommended_spaces } from "../api/data";
 
 export default function RecommendedSpaces() {
   const spaces = recommended_spaces;
@@ -28,8 +28,7 @@ export default function RecommendedSpaces() {
       <ul>
         {spaces.map((space, index) => (
           <li key={space.id} className="flex flex-col border rounded">
-            <div className="flex  items-center">
-              {" "}
+            <div className="flex items-center">
               <div className="bg-gray-100 min-w-20 h-20 rounded-lg" />
               <div className="flex flex-col p-4">
                 <h3 className="font-semibold">{space.name}</h3>
