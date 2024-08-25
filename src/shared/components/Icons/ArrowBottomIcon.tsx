@@ -14,8 +14,8 @@ export const ArrowBottomIcon = React.forwardRef<SVGSVGElement, IconProps>(
         ref={forwardedRef}
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M11.2422 1.13956C11.442 1.33355 11.4419 1.65424 11.2421 1.84819L6.64361 6.312L6.64578 6.3141L5.93879 7L5.93682 6.99809L5.93485 7L5.22597 6.31162L5.22783 6.30982L0.649212 1.86503C0.450054 1.6717 0.450068 1.35201 0.649241 1.15869C0.840207 0.973339 1.14392 0.973347 1.33487 1.15871L5.93461 5.62375L10.5542 1.13949C10.7458 0.953477 11.0506 0.953507 11.2422 1.13956Z"
           fill={color}
         />
