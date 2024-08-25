@@ -49,6 +49,7 @@ export default function Map({ address }: { address: string }) {
             boxSizing: "border-box",
             borderRadius: "10px",
           }}
+          options={{ streetViewControl: false }}
           center={coordinates}
           zoom={16}
         >
