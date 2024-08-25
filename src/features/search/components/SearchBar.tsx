@@ -16,13 +16,14 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full items-center">
-      <div className="flex justify-between w-full bg-gray-100 px-4 py-2 mr-2 rounded-xl">
+      <div className="flex justify-between w-full bg-gray-100 px-3 py-2 mx-2 rounded-xl">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="내 주변 베리어프리 놀이터"
-          className="bg-transparent "
+          className="bg-transparent w-full focus:outline-none"
+          autoFocus
         />
         <button type="submit">
           <SearchIcon color="#888" />
