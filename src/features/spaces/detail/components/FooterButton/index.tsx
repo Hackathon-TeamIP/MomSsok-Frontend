@@ -36,7 +36,10 @@ export const FooterButton = ({
             관심 장소
           </p>
         </Button>
-        <Button className="w-full max-h-[48px]" onClick={() => setIsOpen(true)}>
+        <Button
+          className="w-full max-h-[48px] px-0"
+          onClick={() => setIsOpen(true)}
+        >
           예약하기
         </Button>
       </div>
