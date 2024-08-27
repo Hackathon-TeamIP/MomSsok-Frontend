@@ -16,7 +16,7 @@ type Bus = {
   directions: string;
 };
 
-type Transportation = {
+export type Transportation = {
   subway: Subway[];
   bus: Bus[];
 };

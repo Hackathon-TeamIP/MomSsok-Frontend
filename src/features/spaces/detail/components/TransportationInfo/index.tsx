@@ -11,9 +11,7 @@ export const TransportationInfo = ({
     <div className="space-y-1">
       {transportation.subway.map((subway, index) => (
         <div key={index} className="text-sm">
-          <span className="text-primary">
-            {subway.line} {subway.station}{" "}
-          </span>
+          <span className="text-primary">{subway.station} </span>
           <span className="text-[#424242]">
             {subway.exit}번 출구 {subway.directions}
           </span>
