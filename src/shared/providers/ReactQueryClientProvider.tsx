@@ -15,6 +15,7 @@ export const ReactQueryClientProvider = ({
         defaultOptions: {
           queries: {
             staleTime: 60 * 1000,
+            throwOnError: true,
           },
         },
       }),
