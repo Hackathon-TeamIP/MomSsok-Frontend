@@ -6,7 +6,7 @@ export type BasicInfo = {
 
 type Subway = {
   station: string;
-  exit: number | string; // Exit can be a number or empty string
+  exit: number | string;
   directions: string;
 };
 
