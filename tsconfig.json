@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/features/main/api/data.ts"
+    "src/shared/data/spaces.ts"
   ],
   "exclude": [
     "node_modules"
