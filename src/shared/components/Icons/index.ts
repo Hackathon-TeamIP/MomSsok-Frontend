@@ -13,3 +13,8 @@ export { default as GeoIcon } from "./GeoIcon";
 export { default as CloseIcon } from "./CloseIcon";
 export { default as CircleMinusIcon } from "./CircleMinusIcon";
 export { default as CirclePlusIcon } from "./CirclePlusIcon";
+export { default as AccessWheelchairIcon } from "./AccessWheelchairIcon";
+export { default as AccessRestroomIcon } from "./AccessRestroomIcon";
+export { default as AccessElevatorIcon } from "./AccessElevatorIcon";
+export { default as AccessParkingIcon } from "./AccessParkingIcon";
+export { default as AccessThresholdIcon } from "./AccessThresholdIcon";

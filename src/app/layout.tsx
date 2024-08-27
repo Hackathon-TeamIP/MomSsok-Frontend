@@ -2,6 +2,7 @@ import "@/shared/styles";
 import { NextLayout } from "@/shared/components/Layout/Layout";
 import { pretendard } from "@/shared/styles/fonts";
 import type { Metadata } from "next";
+import { ReactQueryClientProvider } from "@/shared/providers/ReactQueryClientProvider";
 
 export const metadata: Metadata = {
   title: "맘쏙",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${pretendard.variable}`}>
       <body className="max-w-custom mx-auto min-h-screen flex flex-col shadow-lg overflow-y-auto h-auto scrollbar-hide">
-        <NextLayout>{children}</NextLayout>
+        <ReactQueryClientProvider>
+          <NextLayout>{children}</NextLayout>
+        </ReactQueryClientProvider>
       </body>
     </html>
   );

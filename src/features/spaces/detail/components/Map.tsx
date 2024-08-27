@@ -31,8 +31,6 @@ export default function Map({ address }: { address: string }) {
     }
   }, [isLoaded, address]);
 
-  console.log("address", address);
-
   if (loadError || error) {
     console.error("Error loading Google Maps API:", loadError, error);
     return null;

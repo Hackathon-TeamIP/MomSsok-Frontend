@@ -1,14 +1,19 @@
-import React from "react";
-import data from "../../api/data";
-import { Tag } from "@/shared/components/Tag";
+"use client";
 import { Divider } from "@/shared/components/Divider";
-import { TransportationInfo } from "../TransportationInfo";
-import { FooterButton } from "../FooterButton";
 import ArrowRightIcon from "@/shared/components/Icons/ArrowRightIcon";
+import { Tag } from "@/shared/components/Tag";
+import { BasicInfo } from "@/shared/types/space";
+import { useParams } from "next/navigation";
+import { useSpaceDetail } from "../../hooks/useSpaceDetail";
+import { FooterButton } from "../FooterButton";
 import Map from "../Map";
+import { TransportationInfo } from "../TransportationInfo";
+import { ACCESS_ICON_MAP, INFO_LBAEL_MAP } from "./constant";
 
 export const SpaceInfo = () => {
-  const { info, accessInfo, transportation, isBookmarked } = data;
+  const { id } = useParams<{ id: string }>();
+  const { data } = useSpaceDetail(id);
+  const { basicInfo, accessInfo, transportation } = data.data[0];
 
   return (
     <>
@@ -23,34 +28,33 @@ export const SpaceInfo = () => {
           </div>
         </div>
         <div className="flex gap-[8px] flex-wrap mb-3">
-          {accessInfo
-            .filter((tag) => tag.available) // available이 true인 항목만 필터링
-            .map((tag) => (
-              <Tag
-                key={tag.id}
-                name={tag.title}
-                leftIcon={tag.icon}
-                variant="primary"
-              />
-            ))}
-        </div>
-
-        <div className="py-[15px] px-[13px] bg-[#F5F5F5] rounded-[10px] flex flex-col gap-2">
-          {info.map((item) => (
-            <div key={item.id} className="flex gap-2">
-              <p className="text-[#494949] text-[13px] font-medium text-nowrap">
-                {item.title}
-              </p>
-              <p className="text-[#7C7C7C] text-[13px]">{item.description}</p>
-            </div>
+          {accessInfo.map((tag, index) => (
+            <Tag
+              key={index}
+              name={tag.trim()}
+              leftIcon={ACCESS_ICON_MAP[tag.trim()]}
+              variant="primary"
+            />
           ))}
         </div>
-        <Map
-          address={
-            info[0].description ??
-            "서울특별시 중랑구 용마산로 209 공공기여시설1층"
-          }
-        />
+        <div className="py-[15px] px-[13px] bg-[#F5F5F5] rounded-[10px] flex flex-col gap-2">
+          {Object.keys(basicInfo).map((key) => {
+            if (key in INFO_LBAEL_MAP) {
+              return (
+                <div className="flex gap-2" key={key}>
+                  <p className="text-[#494949] text-[13px] font-medium text-nowrap">
+                    {INFO_LBAEL_MAP[key as keyof typeof INFO_LBAEL_MAP]}
+                  </p>
+                  <p className="text-[#7C7C7C] text-[13px]">
+                    {basicInfo[key as keyof BasicInfo]}
+                  </p>
+                </div>
+              );
+            }
+            return null;
+          })}
+        </div>
+        <Map address={basicInfo.address} />
         <Divider className="mt-6" />
         <div className="flex justify-between py-3 mt-[2px]">
           <h5 className="font-semibold text-[#424242] text-[15px]">
@@ -64,7 +68,7 @@ export const SpaceInfo = () => {
         <TransportationInfo transportation={transportation} />
         <Divider className="my-5" />
       </section>
-      <FooterButton isSelected={isBookmarked} />
+      <FooterButton isSelected={false} />
     </>
   );
 };
