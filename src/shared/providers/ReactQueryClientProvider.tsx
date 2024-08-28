@@ -2,24 +2,39 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryStreamedHydration } from "@tanstack/react-query-next-experimental";
-import { useState } from "react";
+import { ReactNode } from "react";
+
+function makeQueryClient() {
+  return new QueryClient({
+    defaultOptions: {
+      queries: {
+        // staleTime: 60 * 1000,
+        throwOnError: true,
+      },
+    },
+  });
+}
+
+let clientQueryClient: QueryClient | undefined = undefined;
+
+function getQueryClient() {
+  if (typeof window === "undefined") {
+    // Server: always make a new query client
+    return makeQueryClient();
+  } else {
+    // Browser: make a new query client if we don't already have one
+    if (!clientQueryClient) clientQueryClient = makeQueryClient();
+    return clientQueryClient;
+  }
+}
 
 export const ReactQueryClientProvider = ({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) => {
-  const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            staleTime: 60 * 1000,
-            throwOnError: true,
-          },
-        },
-      }),
-  );
+  const queryClient = getQueryClient();
+
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryStreamedHydration>{children}</ReactQueryStreamedHydration>
