@@ -4817,7 +4817,7 @@ export const spaces: SpaceListItem[] = [
       ],
       bus: [
         {
-          type: "_x0008_지선버스, 마을버스",
+          type: "지선버스, 마을버스",
           bus_number: "1218, 강북09, 강북11",
           directions: "강북구청 사거리역 하차",
         },
@@ -8530,7 +8530,7 @@ export const spaces: SpaceListItem[] = [
         {
           station: "4호선 총신대입구(이수)역",
           exit: 5,
-          directions: "_x0008_출구에서 176m",
+          directions: "출구에서 176m",
         },
       ],
       bus: [
@@ -8542,7 +8542,7 @@ export const spaces: SpaceListItem[] = [
       ],
     },
     tags: [],
-    accessInfo: ["휠체어 입장 가능", " 장애인 화장실"],
+    accessInfo: ["휠체어 입장 가능", "장애인 화장실"],
     locationType: "실내",
     reviewCount: 132,
     rating: 4.4,
