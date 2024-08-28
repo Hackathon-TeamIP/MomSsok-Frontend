@@ -5,8 +5,9 @@ import { SpacesListItem } from "./ListItem";
 import { AnimatePresence } from "framer-motion";
 import { Drawer, DrawerFilterList } from "@/shared/components/Drawer";
 import ArrowRightIcon from "@/shared/components/Icons/ArrowRightIcon";
-import useSpaceList from "../../hooks/useSpaceList";
 import { VisibilityLoader } from "@/shared/components/VisibilityLoader";
+import { useSpaceList } from "../../hooks/useSpaceList";
+import { SpacesListSkeleton } from "../Skeleton";
 
 export type OptionKey = "nearest" | "popular" | "rating";
 
@@ -21,17 +22,24 @@ export const SpacesList = () => {
   const [selectedOption, setSelectedOption] = useState<string>(OPTIONS.nearest);
 
   const {
-    data: spaces,
+    data,
     isFetching,
     isFetchingNextPage,
     hasNextPage,
     fetchNextPage,
+    isLoading,
   } = useSpaceList();
 
   const handleOptionClick = (selectedKey: OptionKey) => {
     setSelectedOption(OPTIONS[selectedKey]);
     setIsOpen(false);
   };
+
+  const spaces = data?.pages.map((page) => page?.data ?? []).flat();
+
+  if (isLoading) {
+    return <SpacesListSkeleton />;
+  }
 
   return (
     <>
@@ -51,7 +59,7 @@ export const SpacesList = () => {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-x-3 gap-y-[23px]">
-          {spaces.map((space) => (
+          {spaces?.map((space) => (
             <SpacesListItem key={space.id} space={space} />
           ))}
         </div>

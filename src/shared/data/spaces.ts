@@ -562,9 +562,9 @@ export const spaces: SpaceListItem[] = [
     tags: ["주차 가능"],
     accessInfo: [
       "휠체어 입장 가능",
-      " 장애인 화장실, ",
-      " 문턱 1cm 미만",
-      " 장애인 전용 주차",
+      "장애인 화장실",
+      "문턱 1cm 미만",
+      "장애인 주차장",
     ],
     locationType: "실내",
     reviewCount: 300,
